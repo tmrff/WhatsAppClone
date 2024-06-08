@@ -16,6 +16,9 @@
 		E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6312C13018500B5AC40 /* CommunityTabScreen.swift */; };
 		E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6342C13E96E00B5AC40 /* ChannelTabScreen.swift */; };
 		E9BDE6372C13EF4100B5AC40 /* ChannelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */; };
+		E9BDE63A2C13FCA200B5AC40 /* SettingsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6392C13FCA200B5AC40 /* SettingsTabScreen.swift */; };
+		E9BDE63C2C13FD3C00B5AC40 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE63B2C13FD3C00B5AC40 /* SettingsItemView.swift */; };
+		E9BDE63F2C13FE4500B5AC40 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE63E2C13FE4500B5AC40 /* SettingsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		E9BDE6312C13018500B5AC40 /* CommunityTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabScreen.swift; sourceTree = "<group>"; };
 		E9BDE6342C13E96E00B5AC40 /* ChannelTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabScreen.swift; sourceTree = "<group>"; };
 		E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItemView.swift; sourceTree = "<group>"; };
+		E9BDE6392C13FCA200B5AC40 /* SettingsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabScreen.swift; sourceTree = "<group>"; };
+		E9BDE63B2C13FD3C00B5AC40 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
+		E9BDE63E2C13FE4500B5AC40 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,8 @@
 		E9BDE6282C1300BC00B5AC40 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE63D2C13FE2700B5AC40 /* Models */,
+				E9BDE6382C13FC8E00B5AC40 /* Views */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -160,6 +168,23 @@
 				E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E9BDE6382C13FC8E00B5AC40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE6392C13FCA200B5AC40 /* SettingsTabScreen.swift */,
+				E9BDE63B2C13FD3C00B5AC40 /* SettingsItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9BDE63D2C13FE2700B5AC40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE63E2C13FE4500B5AC40 /* SettingsItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,11 +259,14 @@
 			files = (
 				E9BDE6222C12A4CF00B5AC40 /* UpdatesTabScreen.swift in Sources */,
 				E9BDE6262C12BCF100B5AC40 /* CallsTabScreen.swift in Sources */,
+				E9BDE63A2C13FCA200B5AC40 /* SettingsTabScreen.swift in Sources */,
 				E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
+				E9BDE63C2C13FD3C00B5AC40 /* SettingsItemView.swift in Sources */,
 				E9BDE6372C13EF4100B5AC40 /* ChannelItemView.swift in Sources */,
 				E9BDE6202C128DAE00B5AC40 /* MainTabView.swift in Sources */,
+				E9BDE63F2C13FE4500B5AC40 /* SettingsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
