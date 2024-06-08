@@ -14,6 +14,8 @@
 		E9BDE6222C12A4CF00B5AC40 /* UpdatesTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6212C12A4CF00B5AC40 /* UpdatesTabScreen.swift */; };
 		E9BDE6262C12BCF100B5AC40 /* CallsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6252C12BCF100B5AC40 /* CallsTabScreen.swift */; };
 		E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6312C13018500B5AC40 /* CommunityTabScreen.swift */; };
+		E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6342C13E96E00B5AC40 /* ChannelTabScreen.swift */; };
+		E9BDE6372C13EF4100B5AC40 /* ChannelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		E9BDE6212C12A4CF00B5AC40 /* UpdatesTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTabScreen.swift; sourceTree = "<group>"; };
 		E9BDE6252C12BCF100B5AC40 /* CallsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsTabScreen.swift; sourceTree = "<group>"; };
 		E9BDE6312C13018500B5AC40 /* CommunityTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabScreen.swift; sourceTree = "<group>"; };
+		E9BDE6342C13E96E00B5AC40 /* ChannelTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabScreen.swift; sourceTree = "<group>"; };
+		E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		E9BDE62B2C1300D000B5AC40 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE6332C13E96200B5AC40 /* Views */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -144,6 +149,15 @@
 			isa = PBXGroup;
 			children = (
 				E9BDE6312C13018500B5AC40 /* CommunityTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9BDE6332C13E96200B5AC40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE6342C13E96E00B5AC40 /* ChannelTabScreen.swift */,
+				E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,7 +235,9 @@
 				E9BDE6222C12A4CF00B5AC40 /* UpdatesTabScreen.swift in Sources */,
 				E9BDE6262C12BCF100B5AC40 /* CallsTabScreen.swift in Sources */,
 				E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */,
+				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
+				E9BDE6372C13EF4100B5AC40 /* ChannelItemView.swift in Sources */,
 				E9BDE6202C128DAE00B5AC40 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
