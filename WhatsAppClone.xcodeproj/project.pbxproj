@@ -21,6 +21,8 @@
 		E9BDE63F2C13FE4500B5AC40 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE63E2C13FE4500B5AC40 /* SettingsItem.swift */; };
 		E9BDE6432C140E8900B5AC40 /* ChatRoomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6422C140E8900B5AC40 /* ChatRoomScreen.swift */; };
 		E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6442C14134500B5AC40 /* TextInputArea.swift */; };
+		E9BDE6472C141BB600B5AC40 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6462C141BB600B5AC40 /* MessageListController.swift */; };
+		E9BDE6492C142A3400B5AC40 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6482C142A3400B5AC40 /* MessageListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		E9BDE63E2C13FE4500B5AC40 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		E9BDE6422C140E8900B5AC40 /* ChatRoomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomScreen.swift; sourceTree = "<group>"; };
 		E9BDE6442C14134500B5AC40 /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
+		E9BDE6462C141BB600B5AC40 /* MessageListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
+		E9BDE6482C142A3400B5AC40 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,8 @@
 			children = (
 				E9BDE6422C140E8900B5AC40 /* ChatRoomScreen.swift */,
 				E9BDE6442C14134500B5AC40 /* TextInputArea.swift */,
+				E9BDE6462C141BB600B5AC40 /* MessageListController.swift */,
+				E9BDE6482C142A3400B5AC40 /* MessageListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,9 +289,11 @@
 				E9BDE6262C12BCF100B5AC40 /* CallsTabScreen.swift in Sources */,
 				E9BDE63A2C13FCA200B5AC40 /* SettingsTabScreen.swift in Sources */,
 				E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */,
+				E9BDE6472C141BB600B5AC40 /* MessageListController.swift in Sources */,
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
+				E9BDE6492C142A3400B5AC40 /* MessageListView.swift in Sources */,
 				E9BDE6432C140E8900B5AC40 /* ChatRoomScreen.swift in Sources */,
 				E9BDE63C2C13FD3C00B5AC40 /* SettingsItemView.swift in Sources */,
 				E9BDE6372C13EF4100B5AC40 /* ChannelItemView.swift in Sources */,
