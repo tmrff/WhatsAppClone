@@ -39,6 +39,8 @@
 		E9BDE66A2C15CEBC00B5AC40 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6692C15CEBC00B5AC40 /* AuthHeaderView.swift */; };
 		E9BDE66C2C15D03900B5AC40 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE66B2C15D03900B5AC40 /* AuthTextField.swift */; };
 		E9BDE66E2C15D6A800B5AC40 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE66D2C15D6A800B5AC40 /* AuthButton.swift */; };
+		E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE66F2C15DE3D00B5AC40 /* SignUpScreen.swift */; };
+		E9BDE6732C15E28A00B5AC40 /* AuthScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6722C15E28A00B5AC40 /* AuthScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		E9BDE6692C15CEBC00B5AC40 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		E9BDE66B2C15D03900B5AC40 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		E9BDE66D2C15D6A800B5AC40 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		E9BDE66F2C15DE3D00B5AC40 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		E9BDE6722C15E28A00B5AC40 /* AuthScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 		E9BDE6652C15CD1E00B5AC40 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE6712C15E26400B5AC40 /* ViewModels */,
 				E9BDE6662C15CD2900B5AC40 /* Views */,
 			);
 			path = Auth;
@@ -286,8 +291,17 @@
 				E9BDE66B2C15D03900B5AC40 /* AuthTextField.swift */,
 				E9BDE6692C15CEBC00B5AC40 /* AuthHeaderView.swift */,
 				E9BDE66D2C15D6A800B5AC40 /* AuthButton.swift */,
+				E9BDE66F2C15DE3D00B5AC40 /* SignUpScreen.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E9BDE6712C15E26400B5AC40 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE6722C15E28A00B5AC40 /* AuthScreenViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +395,7 @@
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
+				E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
 				E9BDE6552C154D9100B5AC40 /* BubbleImageView.swift in Sources */,
 				E9BDE6492C142A3400B5AC40 /* MessageListView.swift in Sources */,
@@ -394,6 +409,7 @@
 				E9BDE6202C128DAE00B5AC40 /* MainTabView.swift in Sources */,
 				E9BDE6572C1557D800B5AC40 /* BubbleAudioView.swift in Sources */,
 				E9BDE63F2C13FE4500B5AC40 /* SettingsItem.swift in Sources */,
+				E9BDE6732C15E28A00B5AC40 /* AuthScreenViewModel.swift in Sources */,
 				E9BDE6532C144E4900B5AC40 /* CustomModifers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
