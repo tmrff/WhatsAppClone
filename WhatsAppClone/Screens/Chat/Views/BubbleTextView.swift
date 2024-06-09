@@ -15,7 +15,7 @@ struct BubbleTextView: View {
             Text("Hello, World! How are you doing?")
                 .padding(10)
                 .background(item.backgroundColor)
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .applyTail(item.direction)
             
             timeStampTextView()
@@ -49,5 +49,5 @@ struct BubbleTextView: View {
         BubbleTextView(item: .receivedPlaceholder)
     }
     .frame(maxWidth: .infinity)
-    .background(Color.gray.opacity(0.1))
+    .background(Color.gray.opacity(0.4))
 }

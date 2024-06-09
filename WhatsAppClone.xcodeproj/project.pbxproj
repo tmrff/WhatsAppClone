@@ -27,6 +27,7 @@
 		E9BDE64E2C144AEA00B5AC40 /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE64D2C144AEA00B5AC40 /* BubbleTextView.swift */; };
 		E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE64F2C144BF100B5AC40 /* BubbleTailView.swift */; };
 		E9BDE6532C144E4900B5AC40 /* CustomModifers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6522C144E4900B5AC40 /* CustomModifers.swift */; };
+		E9BDE6552C154D9100B5AC40 /* BubbleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6542C154D9100B5AC40 /* BubbleImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E9BDE64D2C144AEA00B5AC40 /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
 		E9BDE64F2C144BF100B5AC40 /* BubbleTailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTailView.swift; sourceTree = "<group>"; };
 		E9BDE6522C144E4900B5AC40 /* CustomModifers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifers.swift; sourceTree = "<group>"; };
+		E9BDE6542C154D9100B5AC40 /* BubbleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				E9BDE6482C142A3400B5AC40 /* MessageListView.swift */,
 				E9BDE64D2C144AEA00B5AC40 /* BubbleTextView.swift */,
 				E9BDE64F2C144BF100B5AC40 /* BubbleTailView.swift */,
+				E9BDE6542C154D9100B5AC40 /* BubbleImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
+				E9BDE6552C154D9100B5AC40 /* BubbleImageView.swift in Sources */,
 				E9BDE6492C142A3400B5AC40 /* MessageListView.swift in Sources */,
 				E9BDE6432C140E8900B5AC40 /* ChatRoomScreen.swift in Sources */,
 				E9BDE63C2C13FD3C00B5AC40 /* SettingsItemView.swift in Sources */,
