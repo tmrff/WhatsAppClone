@@ -46,6 +46,12 @@
 		E9BDE67F2C16964B00B5AC40 /* RootScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE67E2C16964B00B5AC40 /* RootScreenViewModel.swift */; };
 		E9BDE6822C16A25800B5AC40 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6812C16A25800B5AC40 /* UserItem.swift */; };
 		E9BDE6852C16A2C700B5AC40 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6842C16A2C700B5AC40 /* FirebaseConstants.swift */; };
+		E9BDE6872C16E4F400B5AC40 /* ChatParticipantPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6862C16E4F400B5AC40 /* ChatParticipantPickerScreen.swift */; };
+		E9BDE6892C16E7BF00B5AC40 /* ChatParticipantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6882C16E7BF00B5AC40 /* ChatParticipantRowView.swift */; };
+		E9BDE68C2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE68B2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift */; };
+		E9BDE68E2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE68D2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift */; };
+		E9BDE6902C17237000B5AC40 /* SelectedChatParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */; };
+		E9BDE6922C17363800B5AC40 /* NewGroupSetUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +90,12 @@
 		E9BDE67E2C16964B00B5AC40 /* RootScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenViewModel.swift; sourceTree = "<group>"; };
 		E9BDE6812C16A25800B5AC40 /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		E9BDE6842C16A2C700B5AC40 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
+		E9BDE6862C16E4F400B5AC40 /* ChatParticipantPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatParticipantPickerScreen.swift; sourceTree = "<group>"; };
+		E9BDE6882C16E7BF00B5AC40 /* ChatParticipantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatParticipantRowView.swift; sourceTree = "<group>"; };
+		E9BDE68B2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatParticipantPickerViewModel.swift; sourceTree = "<group>"; };
+		E9BDE68D2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupParticipantPickerScreen.swift; sourceTree = "<group>"; };
+		E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedChatParticipantView.swift; sourceTree = "<group>"; };
+		E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupSetUpScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +187,7 @@
 		E9BDE62B2C1300D000B5AC40 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE68A2C1708F600B5AC40 /* ViewModels */,
 				E9BDE6332C13E96200B5AC40 /* Views */,
 			);
 			path = Channel;
@@ -225,6 +238,11 @@
 			children = (
 				E9BDE6342C13E96E00B5AC40 /* ChannelTabScreen.swift */,
 				E9BDE6362C13EF4100B5AC40 /* ChannelItemView.swift */,
+				E9BDE6862C16E4F400B5AC40 /* ChatParticipantPickerScreen.swift */,
+				E9BDE6882C16E7BF00B5AC40 /* ChatParticipantRowView.swift */,
+				E9BDE68D2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift */,
+				E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */,
+				E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +377,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E9BDE68A2C1708F600B5AC40 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE68B2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9BDE6222C12A4CF00B5AC40 /* UpdatesTabScreen.swift in Sources */,
+				E9BDE6922C17363800B5AC40 /* NewGroupSetUpScreen.swift in Sources */,
 				E9BDE66E2C15D6A800B5AC40 /* AuthButton.swift in Sources */,
 				E9BDE6262C12BCF100B5AC40 /* CallsTabScreen.swift in Sources */,
 				E9BDE63A2C13FCA200B5AC40 /* SettingsTabScreen.swift in Sources */,
@@ -448,6 +475,7 @@
 				E9BDE6822C16A25800B5AC40 /* UserItem.swift in Sources */,
 				E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */,
 				E9BDE6762C1681F200B5AC40 /* AuthProvider.swift in Sources */,
+				E9BDE6902C17237000B5AC40 /* SelectedChatParticipantView.swift in Sources */,
 				E9BDE6852C16A2C700B5AC40 /* FirebaseConstants.swift in Sources */,
 				E9BDE6472C141BB600B5AC40 /* MessageListController.swift in Sources */,
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
@@ -457,11 +485,14 @@
 				E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
 				E9BDE67F2C16964B00B5AC40 /* RootScreenViewModel.swift in Sources */,
+				E9BDE68E2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift in Sources */,
 				E9BDE6552C154D9100B5AC40 /* BubbleImageView.swift in Sources */,
+				E9BDE6872C16E4F400B5AC40 /* ChatParticipantPickerScreen.swift in Sources */,
 				E9BDE6492C142A3400B5AC40 /* MessageListView.swift in Sources */,
 				E9BDE6682C15CD4800B5AC40 /* LoginScreen.swift in Sources */,
 				E9BDE6432C140E8900B5AC40 /* ChatRoomScreen.swift in Sources */,
 				E9BDE63C2C13FD3C00B5AC40 /* SettingsItemView.swift in Sources */,
+				E9BDE6892C16E7BF00B5AC40 /* ChatParticipantRowView.swift in Sources */,
 				E9BDE66C2C15D03900B5AC40 /* AuthTextField.swift in Sources */,
 				E9BDE64E2C144AEA00B5AC40 /* BubbleTextView.swift in Sources */,
 				E9BDE64C2C14498F00B5AC40 /* MessageItem.swift in Sources */,
@@ -470,6 +501,7 @@
 				E9BDE6572C1557D800B5AC40 /* BubbleAudioView.swift in Sources */,
 				E9BDE63F2C13FE4500B5AC40 /* SettingsItem.swift in Sources */,
 				E9BDE6732C15E28A00B5AC40 /* AuthScreenViewModel.swift in Sources */,
+				E9BDE68C2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift in Sources */,
 				E9BDE6532C144E4900B5AC40 /* CustomModifers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
