@@ -42,6 +42,8 @@
 		E9BDE6732C15E28A00B5AC40 /* AuthScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6722C15E28A00B5AC40 /* AuthScreenViewModel.swift */; };
 		E9BDE6762C1681F200B5AC40 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6752C1681F200B5AC40 /* AuthProvider.swift */; };
 		E9BDE6782C168AD800B5AC40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9BDE6772C168AD800B5AC40 /* GoogleService-Info.plist */; };
+		E9BDE67C2C16962200B5AC40 /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE67B2C16962200B5AC40 /* RootScreen.swift */; };
+		E9BDE67F2C16964B00B5AC40 /* RootScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE67E2C16964B00B5AC40 /* RootScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		E9BDE6722C15E28A00B5AC40 /* AuthScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenViewModel.swift; sourceTree = "<group>"; };
 		E9BDE6752C1681F200B5AC40 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		E9BDE6772C168AD800B5AC40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9BDE67B2C16962200B5AC40 /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
+		E9BDE67E2C16964B00B5AC40 /* RootScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		E9BDE6272C1300A800B5AC40 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE6792C16961000B5AC40 /* Root */,
 				E9BDE6652C15CD1E00B5AC40 /* Auth */,
 				E9BDE6402C140E6600B5AC40 /* Chat */,
 				E9BDE62D2C1300F100B5AC40 /* Updates */,
@@ -315,6 +320,31 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E9BDE6792C16961000B5AC40 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE67D2C16962900B5AC40 /* ViewModels */,
+				E9BDE67A2C16961700B5AC40 /* Views */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		E9BDE67A2C16961700B5AC40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE67B2C16962200B5AC40 /* RootScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9BDE67D2C16962900B5AC40 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE67E2C16964B00B5AC40 /* RootScreenViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -407,8 +437,10 @@
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
+				E9BDE67C2C16962200B5AC40 /* RootScreen.swift in Sources */,
 				E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
+				E9BDE67F2C16964B00B5AC40 /* RootScreenViewModel.swift in Sources */,
 				E9BDE6552C154D9100B5AC40 /* BubbleImageView.swift in Sources */,
 				E9BDE6492C142A3400B5AC40 /* MessageListView.swift in Sources */,
 				E9BDE6682C15CD4800B5AC40 /* LoginScreen.swift in Sources */,

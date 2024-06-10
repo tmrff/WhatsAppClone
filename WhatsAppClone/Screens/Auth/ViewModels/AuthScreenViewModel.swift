@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class AuthScreenViewModel: ObservableObject {
     
     // MARK: Published Properties
