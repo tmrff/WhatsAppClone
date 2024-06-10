@@ -26,5 +26,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:1080809739221:ios:dd691d5ee57fe9a6f2a35c</string>
+	<key>DATABASE_URL</key>
+	<string>https://whatsappclone-dc1cf-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>
