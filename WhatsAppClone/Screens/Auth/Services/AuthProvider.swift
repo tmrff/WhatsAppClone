@@ -26,6 +26,7 @@ protocol AuthProvider {
 enum AuthError: Error {
     case accountCreationFailed(_ description: String)
     case failedToSaveUserInfo(_ description: String)
+    case emailLoginFailed(_ description: String)
 }
 
 extension AuthError: LocalizedError {
@@ -34,6 +35,8 @@ extension AuthError: LocalizedError {
         case .accountCreationFailed(let description):
             return description
         case .failedToSaveUserInfo(let description):
+            return description
+        case .emailLoginFailed(let description):
             return description
         }
     }
@@ -58,7 +61,14 @@ final class AuthManager: AuthProvider {
     }
     
     func login(with email: String, and password: String) async throws {
-        
+        do {
+            let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
+            fetchCurrentUserInfo()
+            print("🔐 Successfully Sign In : \(authResult.user.email ?? "") ")
+        } catch {
+            print("🔐 Failed to Sign Into the Account with: \(email)")
+            throw AuthError.emailLoginFailed(error.localizedDescription)
+        }
     }
     
     func createAccount(for username: String, with email: String, and password: String) async throws {
@@ -81,6 +91,7 @@ final class AuthManager: AuthProvider {
             print("🔐 Successfully logged out!")
         } catch {
             print("🔐 Failed to log out current User: \(error.localizedDescription)")
+            throw AuthError.emailLoginFailed(error.localizedDescription)
         }
     }
 }
