@@ -23,13 +23,17 @@ struct ChatParticipantPickerScreen: View {
                 }
                 
                 Section {
-                    ForEach(0..<12) { _i in
-                        ChatParticipantRowView(user: .placeholder)
+                    ForEach(viewModel.users) { user in
+                        ChatParticipantRowView(user: user)
                     }
                 } header: {
                     Text("Contacts on WhatsApp")
                         .textCase(nil)
                         .bold()
+                }
+                
+                if viewModel.isPaginatable {
+                    loadMoreUsersView()
                 }
             }
             .searchable(text: $searchText,
@@ -45,6 +49,15 @@ struct ChatParticipantPickerScreen: View {
                trailingNavItem()
             }
         }
+    }
+    
+    private func loadMoreUsersView() -> some View {
+        ProgressView()
+            .frame(maxWidth: .infinity)
+            .listRowBackground(Color.clear)
+            .task {
+                await viewModel.fetchUsers()
+            }
     }
 }
 

@@ -52,6 +52,7 @@
 		E9BDE68E2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE68D2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift */; };
 		E9BDE6902C17237000B5AC40 /* SelectedChatParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */; };
 		E9BDE6922C17363800B5AC40 /* NewGroupSetUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */; };
+		E9BDE6952C17EAB300B5AC40 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6942C17EAB300B5AC40 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		E9BDE68D2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupParticipantPickerScreen.swift; sourceTree = "<group>"; };
 		E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedChatParticipantView.swift; sourceTree = "<group>"; };
 		E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupSetUpScreen.swift; sourceTree = "<group>"; };
+		E9BDE6942C17EAB300B5AC40 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		E9BDE6102C128CB200B5AC40 /* WhatsAppClone */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE6932C17EAA300B5AC40 /* Services */,
 				E9BDE6512C144E3700B5AC40 /* Helpers */,
 				E9BDE6272C1300A800B5AC40 /* Screens */,
 				E9BDE6112C128CB200B5AC40 /* WhatsAppCloneApp.swift */,
@@ -385,6 +388,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		E9BDE6932C17EAA300B5AC40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE6942C17EAB300B5AC40 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,6 +509,7 @@
 				E9BDE64C2C14498F00B5AC40 /* MessageItem.swift in Sources */,
 				E9BDE6372C13EF4100B5AC40 /* ChannelItemView.swift in Sources */,
 				E9BDE6202C128DAE00B5AC40 /* MainTabView.swift in Sources */,
+				E9BDE6952C17EAB300B5AC40 /* UserService.swift in Sources */,
 				E9BDE6572C1557D800B5AC40 /* BubbleAudioView.swift in Sources */,
 				E9BDE63F2C13FE4500B5AC40 /* SettingsItem.swift in Sources */,
 				E9BDE6732C15E28A00B5AC40 /* AuthScreenViewModel.swift in Sources */,
