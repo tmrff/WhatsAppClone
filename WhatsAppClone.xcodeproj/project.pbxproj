@@ -53,6 +53,8 @@
 		E9BDE6902C17237000B5AC40 /* SelectedChatParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */; };
 		E9BDE6922C17363800B5AC40 /* NewGroupSetUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */; };
 		E9BDE6952C17EAB300B5AC40 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6942C17EAB300B5AC40 /* UserService.swift */; };
+		E9BDE6982C19529400B5AC40 /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6972C19529400B5AC40 /* ChannelItem.swift */; };
+		E9BDE69A2C19559000B5AC40 /* ChannelTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		E9BDE68F2C17237000B5AC40 /* SelectedChatParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedChatParticipantView.swift; sourceTree = "<group>"; };
 		E9BDE6912C17363800B5AC40 /* NewGroupSetUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupSetUpScreen.swift; sourceTree = "<group>"; };
 		E9BDE6942C17EAB300B5AC40 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E9BDE6972C19529400B5AC40 /* ChannelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItem.swift; sourceTree = "<group>"; };
+		E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		E9BDE62B2C1300D000B5AC40 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE6962C19528100B5AC40 /* Models */,
 				E9BDE68A2C1708F600B5AC40 /* ViewModels */,
 				E9BDE6332C13E96200B5AC40 /* Views */,
 			);
@@ -384,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				E9BDE68B2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift */,
+				E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -394,6 +400,14 @@
 				E9BDE6942C17EAB300B5AC40 /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E9BDE6962C19528100B5AC40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE6972C19529400B5AC40 /* ChannelItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +499,7 @@
 				E9BDE66A2C15CEBC00B5AC40 /* AuthHeaderView.swift in Sources */,
 				E9BDE6822C16A25800B5AC40 /* UserItem.swift in Sources */,
 				E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */,
+				E9BDE69A2C19559000B5AC40 /* ChannelTabViewModel.swift in Sources */,
 				E9BDE6762C1681F200B5AC40 /* AuthProvider.swift in Sources */,
 				E9BDE6902C17237000B5AC40 /* SelectedChatParticipantView.swift in Sources */,
 				E9BDE6852C16A2C700B5AC40 /* FirebaseConstants.swift in Sources */,
@@ -493,6 +508,7 @@
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
 				E9BDE67C2C16962200B5AC40 /* RootScreen.swift in Sources */,
+				E9BDE6982C19529400B5AC40 /* ChannelItem.swift in Sources */,
 				E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
 				E9BDE67F2C16964B00B5AC40 /* RootScreenViewModel.swift in Sources */,
