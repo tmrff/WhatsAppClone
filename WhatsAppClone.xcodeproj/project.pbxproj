@@ -56,6 +56,7 @@
 		E9BDE6982C19529400B5AC40 /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6972C19529400B5AC40 /* ChannelItem.swift */; };
 		E9BDE69A2C19559000B5AC40 /* ChannelTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */; };
 		E9BDE69D2C1AA7D500B5AC40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE69C2C1AA7D500B5AC40 /* String+Extensions.swift */; };
+		E9BDE6A02C1B1ED300B5AC40 /* MessageItem+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE69F2C1B1ED300B5AC40 /* MessageItem+Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		E9BDE6972C19529400B5AC40 /* ChannelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItem.swift; sourceTree = "<group>"; };
 		E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabViewModel.swift; sourceTree = "<group>"; };
 		E9BDE69C2C1AA7D500B5AC40 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E9BDE69F2C1B1ED300B5AC40 /* MessageItem+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageItem+Types.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				E9BDE64B2C14498F00B5AC40 /* MessageItem.swift */,
+				E9BDE69F2C1B1ED300B5AC40 /* MessageItem+Types.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				E9BDE66A2C15CEBC00B5AC40 /* AuthHeaderView.swift in Sources */,
 				E9BDE6822C16A25800B5AC40 /* UserItem.swift in Sources */,
 				E9BDE6322C13018500B5AC40 /* CommunityTabScreen.swift in Sources */,
+				E9BDE6A02C1B1ED300B5AC40 /* MessageItem+Types.swift in Sources */,
 				E9BDE69A2C19559000B5AC40 /* ChannelTabViewModel.swift in Sources */,
 				E9BDE6762C1681F200B5AC40 /* AuthProvider.swift in Sources */,
 				E9BDE6902C17237000B5AC40 /* SelectedChatParticipantView.swift in Sources */,

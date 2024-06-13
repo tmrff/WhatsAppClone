@@ -67,6 +67,12 @@ final class ChatParticipantPickerViewModel: ObservableObject {
         }
     }
     
+    func deselectAllChatParticipants() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.selectedChatParticipants.removeAll()
+        }
+    }
+    
     func handleItemSelection(_ item: UserItem) {
         if isUserSelected(item) {
             guard let index = selectedChatParticipants.firstIndex(where: { $0.uid == item.uid }) else { return }
@@ -81,37 +87,60 @@ final class ChatParticipantPickerViewModel: ObservableObject {
         return isSelected
     }
     
-    //    func buildDirectChannel() async -> Result<ChannelItem, Error> {
-    //
-    //    }
+    func createGroupChannel(_ groupName: String?, completion: @escaping(_ newChannel: ChannelItem) -> Void) {
+        let channelCreation = createChannel(groupName)
+        switch channelCreation {
+        case .success(let channel):
+            completion(channel)
+        case .failure(let error):
+            print("Failed to create a Group Channel \(error.localizedDescription)")
+        }
+    }
     
-    func createChannel(_ channelName: String?) -> Result<ChannelItem, Error> {
+    func createDirectChannel(_ chatParticipant: UserItem, completion: @escaping(_ newChannel: ChannelItem) -> Void) {
+        selectedChatParticipants.append(chatParticipant)
+        let channelCreation = createChannel(nil)
+        switch channelCreation {
+        case .success(let channel):
+            completion(channel)
+        case .failure(let error):
+            print("Failed to create a Direct Channel \(error.localizedDescription)")
+        }
+    }
+    
+    private func createChannel(_ channelName: String?) -> Result<ChannelItem, Error> {
         guard !selectedChatParticipants.isEmpty else { return .failure(ChannelCreationError.noChatParticipant) }
         
         guard let channelId = FirebaseConstants.ChannelsRef.childByAutoId().key,
-              let currentUid = Auth.auth().currentUser?.uid
-                //              let messageId = FirebaseConstants.MessagesRef.childByAutoId().key
+              let currentUid = Auth.auth().currentUser?.uid,
+              let messageId = FirebaseConstants.MessagesRef.childByAutoId().key
         else { return .failure(ChannelCreationError.failedToCreateUniqueIds) }
         
         let timeStamp = Date().timeIntervalSince1970
         var membersUids = selectedChatParticipants.compactMap { $0.uid }
         membersUids.append(currentUid)
         
+        let newChannelBroadcast = AdminMessageType.channelCreation.rawValue
+        
         var channelDict: [String: Any] = [
             .id : channelId,
-            .lastMessage: "",
+            .lastMessage: newChannelBroadcast,
             .creationDate: timeStamp,
             .lastMessageTimeStamp: timeStamp,
             .membersUids: membersUids,
             .membersCount: membersUids.count,
-            .adminUids: [currentUid]
+            .adminUids: [currentUid],
+            .createdBy: currentUid
         ]
         
-        if let channelName = channelName, channelName.isEmptyOrWhiteSpace {
+        if let channelName = channelName, !channelName.isEmptyOrWhiteSpace {
             channelDict[.name] = channelName
         }
         
+        let messageDict: [String: Any] = [.type: newChannelBroadcast, .timeStamp : timeStamp, .ownerUid : currentUid]
+        
         FirebaseConstants.ChannelsRef.child(channelId).setValue(channelDict)
+        FirebaseConstants.MessagesRef.child(channelId).setValue(messageDict)
         
         membersUids.forEach { userId in
             // keeping an index of the channel that a specific user belongs to
@@ -124,7 +153,7 @@ final class ChatParticipantPickerViewModel: ObservableObject {
             FirebaseConstants.UserDirectChannels.child(currentUid).child(chatParticipant.uid).setValue([channelId: true])
             FirebaseConstants.UserDirectChannels.child(chatParticipant.uid).child(currentUid).setValue([channelId: true])
         }
-            
+        
         var newChannelItem = ChannelItem(channelDict)
         newChannelItem.members = selectedChatParticipants
         return .success(newChannelItem)

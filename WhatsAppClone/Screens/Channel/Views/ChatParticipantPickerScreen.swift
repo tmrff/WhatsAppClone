@@ -28,15 +28,7 @@ struct ChatParticipantPickerScreen: View {
                     ForEach(viewModel.users) { user in
                         ChatParticipantRowView(user: user)
                             .onTapGesture {
-                                viewModel.selectedChatParticipants.append(user)
-                                let createChannel = viewModel.createChannel(nil)
-                                switch createChannel {
-                                case .success(let channelItem):
-                                   onCreate(channelItem)
-                                    
-                                case .failure(let error):
-                                    print("failed to create channel: \(error.localizedDescription)")
-                                }
+                                viewModel.createDirectChannel(user, completion: onCreate)
                             }
                     }
                 } header: {
@@ -55,11 +47,14 @@ struct ChatParticipantPickerScreen: View {
             )
             .navigationTitle("New Chat")
             .navigationDestination(for: ChannelCreationRoute.self) { route in
-               destinationView(for: route)
+                destinationView(for: route)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-               trailingNavItem()
+                trailingNavItem()
+            }
+            .onAppear {
+                viewModel.deselectAllChatParticipants()
             }
         }
     }
@@ -81,7 +76,7 @@ extension ChatParticipantPickerScreen {
         case .groupParticipantPicker:
             GroupParticipantPickerScreen(viewModel: viewModel)
         case .setUpGroupChat:
-            NewGroupSetUpScreen(viewModel: viewModel)
+            NewGroupSetUpScreen(viewModel: viewModel, onCreate: onCreate)
         }
     }
 }
