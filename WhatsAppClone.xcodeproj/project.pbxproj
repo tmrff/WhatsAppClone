@@ -55,6 +55,7 @@
 		E9BDE6952C17EAB300B5AC40 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6942C17EAB300B5AC40 /* UserService.swift */; };
 		E9BDE6982C19529400B5AC40 /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6972C19529400B5AC40 /* ChannelItem.swift */; };
 		E9BDE69A2C19559000B5AC40 /* ChannelTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */; };
+		E9BDE69D2C1AA7D500B5AC40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE69C2C1AA7D500B5AC40 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		E9BDE6942C17EAB300B5AC40 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E9BDE6972C19529400B5AC40 /* ChannelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItem.swift; sourceTree = "<group>"; };
 		E9BDE6992C19559000B5AC40 /* ChannelTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabViewModel.swift; sourceTree = "<group>"; };
+		E9BDE69C2C1AA7D500B5AC40 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		E9BDE6102C128CB200B5AC40 /* WhatsAppClone */ = {
 			isa = PBXGroup;
 			children = (
+				E9BDE69B2C1AA7C200B5AC40 /* Extensions */,
 				E9BDE6932C17EAA300B5AC40 /* Services */,
 				E9BDE6512C144E3700B5AC40 /* Helpers */,
 				E9BDE6272C1300A800B5AC40 /* Screens */,
@@ -410,6 +413,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E9BDE69B2C1AA7C200B5AC40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9BDE69C2C1AA7D500B5AC40 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,6 +516,7 @@
 				E9BDE6852C16A2C700B5AC40 /* FirebaseConstants.swift in Sources */,
 				E9BDE6472C141BB600B5AC40 /* MessageListController.swift in Sources */,
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
+				E9BDE69D2C1AA7D500B5AC40 /* String+Extensions.swift in Sources */,
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
 				E9BDE67C2C16962200B5AC40 /* RootScreen.swift in Sources */,
