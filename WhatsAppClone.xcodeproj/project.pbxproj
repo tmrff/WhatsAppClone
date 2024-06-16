@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E952060E2C1ED83B006B4F03 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952060D2C1ED83B006B4F03 /* ChatRoomViewModel.swift */; };
+		E95206102C1EDA04006B4F03 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952060F2C1EDA04006B4F03 /* MessageService.swift */; };
 		E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6112C128CB200B5AC40 /* WhatsAppCloneApp.swift */; };
 		E9BDE6162C128CB300B5AC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9BDE6152C128CB300B5AC40 /* Assets.xcassets */; };
 		E9BDE6192C128CB300B5AC40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9BDE6182C128CB300B5AC40 /* Preview Assets.xcassets */; };
@@ -60,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E952060D2C1ED83B006B4F03 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
+		E952060F2C1EDA04006B4F03 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		E9BDE60E2C128CB200B5AC40 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BDE6112C128CB200B5AC40 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
 		E9BDE6152C128CB300B5AC40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E952060C2C1ED82D006B4F03 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E952060D2C1ED83B006B4F03 /* ChatRoomViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		E9BDE6052C128CB200B5AC40 = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +292,7 @@
 		E9BDE6402C140E6600B5AC40 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E952060C2C1ED82D006B4F03 /* ViewModels */,
 				E9BDE64A2C14496100B5AC40 /* Models */,
 				E9BDE6412C140E6D00B5AC40 /* Views */,
 			);
@@ -404,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				E9BDE6942C17EAB300B5AC40 /* UserService.swift */,
+				E952060F2C1EDA04006B4F03 /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,7 +536,9 @@
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
 				E9BDE69D2C1AA7D500B5AC40 /* String+Extensions.swift in Sources */,
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
+				E95206102C1EDA04006B4F03 /* MessageService.swift in Sources */,
 				E9BDE6352C13E96E00B5AC40 /* ChannelTabScreen.swift in Sources */,
+				E952060E2C1ED83B006B4F03 /* ChatRoomViewModel.swift in Sources */,
 				E9BDE67C2C16962200B5AC40 /* RootScreen.swift in Sources */,
 				E9BDE6982C19529400B5AC40 /* ChannelItem.swift in Sources */,
 				E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */,
