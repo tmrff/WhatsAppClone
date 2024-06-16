@@ -27,6 +27,7 @@ final class ChatParticipantPickerViewModel: ObservableObject {
     @Published var navStack = [ChannelCreationRoute]()
     @Published var selectedChatParticipants = [UserItem]()
     @Published private(set) var users = [UserItem]()
+    @Published var errorState: (showError: Bool, errorMessage: String) = (false, "Uh Oh")
     
     private var lastCursor: String?
     
@@ -78,6 +79,11 @@ final class ChatParticipantPickerViewModel: ObservableObject {
             guard let index = selectedChatParticipants.firstIndex(where: { $0.uid == item.uid }) else { return }
             selectedChatParticipants.remove(at: index)
         } else {
+            guard selectedChatParticipants.count < ChannelConstants.maxGroupParticipants else {
+                let errorMessage = "Sorry, we only allow a maximum of \(ChannelConstants.maxGroupParticipants) in a group chat."
+                showError(errorMessage)
+                return
+            }
             selectedChatParticipants.append(item)
         }
     }
@@ -93,6 +99,7 @@ final class ChatParticipantPickerViewModel: ObservableObject {
         case .success(let channel):
             completion(channel)
         case .failure(let error):
+            showError("Sorry, something went wrong while trying to set up your group chat.")
             print("Failed to create a Group Channel \(error.localizedDescription)")
         }
     }
@@ -104,8 +111,14 @@ final class ChatParticipantPickerViewModel: ObservableObject {
         case .success(let channel):
             completion(channel)
         case .failure(let error):
+            showError("Sorry, something went wrong while trying to set up your chat.")
             print("Failed to create a Direct Channel \(error.localizedDescription)")
         }
+    }
+    
+    func showError(_ errorMessage: String) {
+        errorState.errorMessage = errorMessage
+        errorState.showError = true
     }
     
     private func createChannel(_ channelName: String?) -> Result<ChannelItem, Error> {
