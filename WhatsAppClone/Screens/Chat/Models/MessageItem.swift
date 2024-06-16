@@ -13,13 +13,14 @@ struct MessageItem: Identifiable {
     let text: String
     let type: MessageType
     let ownerUid: String
+    let timeStamp: Date
     
     var direction: MessageDirection {
         return ownerUid == Auth.auth().currentUser?.uid ? .sent : .received
     }
     
-    static let sentPlaceholder = MessageItem(id: UUID().uuidString, text: "Holy Spagetti", type: .text, ownerUid: "1")
-    static let receivedPlaceholder = MessageItem(id: UUID().uuidString, text: "Hey", type: .text, ownerUid: "2")
+    static let sentPlaceholder = MessageItem(id: UUID().uuidString, text: "Holy Spagetti", type: .text, ownerUid: "1", timeStamp: Date())
+    static let receivedPlaceholder = MessageItem(id: UUID().uuidString, text: "Hey", type: .text, ownerUid: "2", timeStamp: Date())
     
     var alignment: Alignment {
         return direction == . received ? .leading : .trailing
@@ -34,10 +35,10 @@ struct MessageItem: Identifiable {
     }
     
     static let stubMessages: [MessageItem] = [
-        .init(id: UUID().uuidString, text: "Hi", type: .text, ownerUid: "3"),
-        .init(id: UUID().uuidString, text: "Check this photo out", type: .photo, ownerUid: "4"),
-        .init(id: UUID().uuidString, text: "Play this video", type: .video, ownerUid: "5"),
-        .init(id: UUID().uuidString, text: "", type: .audio, ownerUid: "6")
+        .init(id: UUID().uuidString, text: "Hi", type: .text, ownerUid: "3", timeStamp: Date()),
+        .init(id: UUID().uuidString, text: "Check this photo out", type: .photo, ownerUid: "4", timeStamp: Date()),
+        .init(id: UUID().uuidString, text: "Play this video", type: .video, ownerUid: "5", timeStamp: Date()),
+        .init(id: UUID().uuidString, text: "", type: .audio, ownerUid: "6", timeStamp: Date())
     ]
 }
 
@@ -48,6 +49,8 @@ extension MessageItem {
         let type = dict[.type] as? String ?? "text"
         self.type = MessageType(type)
         self.ownerUid = dict[.ownerUid] as? String ?? ""
+        let timeInterval = dict[.timeStamp] as? TimeInterval ?? 0
+        self.timeStamp = Date(timeIntervalSince1970: timeInterval)
     }
 }
 
