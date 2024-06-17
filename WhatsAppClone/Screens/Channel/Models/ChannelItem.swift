@@ -56,6 +56,14 @@ struct ChannelItem: Identifiable {
         return "Unknown"
     }
     
+    var isCreatedByMe: Bool {
+        return createdBy == Auth.auth().currentUser?.uid ?? ""
+    }
+    
+    var creatorName: String {
+        return members.first { $0.uid == createdBy }?.username ?? "Someone"
+    }
+    
     static let placeholder: ChannelItem = .init(id: "1", lastMessage: "Hello world", creationDate: Date(), lastMessageTimeStamp: Date(), membersCount: 2, adminUids: [], membersUids: [], members: [], createdBy: "")
 }
 
