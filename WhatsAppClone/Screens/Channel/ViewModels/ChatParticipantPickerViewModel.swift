@@ -177,7 +177,7 @@ final class ChatParticipantPickerViewModel: ObservableObject {
         let messageDict: [String: Any] = [.type: newChannelBroadcast, .timeStamp : timeStamp, .ownerUid : currentUid]
         
         FirebaseConstants.ChannelsRef.child(channelId).setValue(channelDict)
-        FirebaseConstants.MessagesRef.child(channelId).setValue(messageDict)
+        FirebaseConstants.MessagesRef.child(channelId).child(messageId).setValue(messageDict)
         
         membersUids.forEach { userId in
             // keeping an index of the channel that a specific user belongs to
