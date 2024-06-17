@@ -38,8 +38,7 @@ extension ChatRoomScreen {
     private func leadingNavItem() -> some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
             HStack {
-                Circle()
-                    .frame(width: 35, height: 30)
+                CircularProfileImageView(channel, size: .mini)
                 
                 Text(channel.title)
                     .bold()
