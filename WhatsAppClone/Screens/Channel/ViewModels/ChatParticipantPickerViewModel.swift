@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import Combine
 
 enum ChannelCreationRoute {
     case groupParticipantPicker
@@ -28,8 +29,10 @@ final class ChatParticipantPickerViewModel: ObservableObject {
     @Published var selectedChatParticipants = [UserItem]()
     @Published private(set) var users = [UserItem]()
     @Published var errorState: (showError: Bool, errorMessage: String) = (false, "Uh Oh")
+    private var subscription: AnyCancellable?
     
     private var lastCursor: String?
+    private var currentUser: UserItem?
     
     var showSelectedUsers: Bool {
         return !selectedChatParticipants.isEmpty
@@ -48,8 +51,23 @@ final class ChatParticipantPickerViewModel: ObservableObject {
     }
     
     init() {
-        Task {
-            await fetchUsers()
+        listenForAuthState()
+    }
+    
+    deinit {
+        subscription?.cancel()
+        subscription = nil
+    }
+    
+    private func listenForAuthState() {
+        subscription = AuthManager.shared.authState.receive(on: DispatchQueue.main).sink { [weak self] authState in
+            switch authState {
+            case .loggedIn(let loggedInUser):
+                self?.currentUser = loggedInUser
+                Task { await self?.fetchUsers() }
+            default:
+                break
+            }
         }
     }
     
@@ -113,6 +131,9 @@ final class ChatParticipantPickerViewModel: ObservableObject {
                 var channelDict = snapshot.value as! [String: Any]
                 var directChannel = ChannelItem(channelDict)
                 directChannel.members = selectedChatParticipants
+                if let currentUser {
+                    directChannel.members.append(currentUser)
+                }
                 completion(directChannel)
             } else {
                 // create a new DM with the user
@@ -193,6 +214,9 @@ final class ChatParticipantPickerViewModel: ObservableObject {
         
         var newChannelItem = ChannelItem(channelDict)
         newChannelItem.members = selectedChatParticipants
+        if let currentUser {
+            newChannelItem.members.append(currentUser)
+        }
         return .success(newChannelItem)
     }
 }
