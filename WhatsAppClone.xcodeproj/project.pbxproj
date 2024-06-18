@@ -15,6 +15,9 @@
 		E952061C2C206245006B4F03 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952061B2C206245006B4F03 /* CircularProfileImageView.swift */; };
 		E952061E2C206B96006B4F03 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952061D2C206B96006B4F03 /* Date+Extensions.swift */; };
 		E95206202C213611006B4F03 /* MediaAttachmentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952061F2C213611006B4F03 /* MediaAttachmentPreview.swift */; };
+		E95206242C214B88006B4F03 /* PhotosPickerItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95206232C214B88006B4F03 /* PhotosPickerItem+Extensions.swift */; };
+		E95206262C214D16006B4F03 /* MediaPickerItem+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95206252C214D16006B4F03 /* MediaPickerItem+Types.swift */; };
+		E95206282C21508A006B4F03 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95206272C21508A006B4F03 /* URL+Extensions.swift */; };
 		E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BDE6112C128CB200B5AC40 /* WhatsAppCloneApp.swift */; };
 		E9BDE6162C128CB300B5AC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9BDE6152C128CB300B5AC40 /* Assets.xcassets */; };
 		E9BDE6192C128CB300B5AC40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9BDE6182C128CB300B5AC40 /* Preview Assets.xcassets */; };
@@ -75,6 +78,9 @@
 		E952061B2C206245006B4F03 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		E952061D2C206B96006B4F03 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E952061F2C213611006B4F03 /* MediaAttachmentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAttachmentPreview.swift; sourceTree = "<group>"; };
+		E95206232C214B88006B4F03 /* PhotosPickerItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotosPickerItem+Extensions.swift"; sourceTree = "<group>"; };
+		E95206252C214D16006B4F03 /* MediaPickerItem+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaPickerItem+Types.swift"; sourceTree = "<group>"; };
+		E95206272C21508A006B4F03 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		E9BDE60E2C128CB200B5AC40 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BDE6112C128CB200B5AC40 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
 		E9BDE6152C128CB300B5AC40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -343,6 +349,7 @@
 			children = (
 				E9BDE64B2C14498F00B5AC40 /* MessageItem.swift */,
 				E9BDE69F2C1B1ED300B5AC40 /* MessageItem+Types.swift */,
+				E95206252C214D16006B4F03 /* MediaPickerItem+Types.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -459,6 +466,8 @@
 			children = (
 				E9BDE69C2C1AA7D500B5AC40 /* String+Extensions.swift */,
 				E952061D2C206B96006B4F03 /* Date+Extensions.swift */,
+				E95206232C214B88006B4F03 /* PhotosPickerItem+Extensions.swift */,
+				E95206272C21508A006B4F03 /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -563,6 +572,7 @@
 				E95206162C203FD8006B4F03 /* AdminMessageTextView.swift in Sources */,
 				E9BDE6472C141BB600B5AC40 /* MessageListController.swift in Sources */,
 				E9BDE6452C14134500B5AC40 /* TextInputArea.swift in Sources */,
+				E95206282C21508A006B4F03 /* URL+Extensions.swift in Sources */,
 				E9BDE69D2C1AA7D500B5AC40 /* String+Extensions.swift in Sources */,
 				E9BDE6502C144BF100B5AC40 /* BubbleTailView.swift in Sources */,
 				E95206102C1EDA04006B4F03 /* MessageService.swift in Sources */,
@@ -573,6 +583,7 @@
 				E9BDE6982C19529400B5AC40 /* ChannelItem.swift in Sources */,
 				E9BDE6702C15DE3D00B5AC40 /* SignUpScreen.swift in Sources */,
 				E9BDE6122C128CB200B5AC40 /* WhatsAppCloneApp.swift in Sources */,
+				E95206262C214D16006B4F03 /* MediaPickerItem+Types.swift in Sources */,
 				E9BDE67F2C16964B00B5AC40 /* RootScreenViewModel.swift in Sources */,
 				E9BDE68E2C170BDB00B5AC40 /* GroupParticipantPickerScreen.swift in Sources */,
 				E95206142C203D28006B4F03 /* ChannelCreationTextView.swift in Sources */,
@@ -595,6 +606,7 @@
 				E9BDE6732C15E28A00B5AC40 /* AuthScreenViewModel.swift in Sources */,
 				E9BDE68C2C17097400B5AC40 /* ChatParticipantPickerViewModel.swift in Sources */,
 				E9BDE6532C144E4900B5AC40 /* CustomModifers.swift in Sources */,
+				E95206242C214B88006B4F03 /* PhotosPickerItem+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
