@@ -35,7 +35,7 @@ struct MainTabView: View {
                     Image(systemName: Tab.communities.icon)
                     Text(Tab.communities.title)
                 }
-            ChannelTabScreen()
+            ChannelTabScreen(currentUser)
                 .tabItem {
                     Image(systemName: Tab.chat.icon)
                     Text(Tab.chat.title)
