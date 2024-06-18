@@ -62,7 +62,7 @@ struct ChannelItem: Identifiable {
             return fullNames.joined(separator: " and ")
         } else if membersCount > 2 {
             let remainingCount = membersCount - 2
-            return fullNames.prefix(2).joined(separator: ", ") + ", and \(remainingCount)" + "others"
+            return fullNames.prefix(2).joined(separator: ", ") + ", and \(remainingCount)" + " others"
         }
         
         return "Unknown"
