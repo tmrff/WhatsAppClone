@@ -23,7 +23,7 @@ final class ChatRoomViewModel: ObservableObject {
     private var currentUser: UserItem?
     
     var showPhotoPickerPreview: Bool {
-        return !mediaAttachments.isEmpty
+        return !mediaAttachments.isEmpty || !photoPickerItems.isEmpty
     }
     
     init(_ channel: ChannelItem) {
@@ -105,16 +105,17 @@ final class ChatRoomViewModel: ObservableObject {
     private func parsePhotoPickerItems(_ photoPickerItems: [PhotosPickerItem]) async {
         for photoItem in photoPickerItems {
             if photoItem.isVideo {
-                if let movie = try? await photoItem.loadTransferable(type: VideoPickerTransferable.self), let thumbnailImage = try? await movie.url.generateVideoThumbnail() {
-                    let videoAttachment = MediaAttachment(id: UUID().uuidString, type: .video(thumbnailImage, movie.url))
+                if let movie = try? await photoItem.loadTransferable(type: VideoPickerTransferable.self), let thumbnailImage = try? await movie.url.generateVideoThumbnail(), let itemIdentifier = photoItem.itemIdentifier {
+                    let videoAttachment = MediaAttachment(id: itemIdentifier, type: .video(thumbnailImage, movie.url))
                     self.mediaAttachments.insert(videoAttachment, at: 0)
                 }
             } else {
                 guard
                     let data = try? await photoItem.loadTransferable(type: Data.self),
-                    let thumbnail = UIImage(data: data)
+                    let thumbnail = UIImage(data: data),
+                    let itemIdentifier = photoItem.itemIdentifier
                 else { return }
-                let photoAttachment = MediaAttachment(id: UUID().uuidString, type: .photo(thumbnail))
+                let photoAttachment = MediaAttachment(id: itemIdentifier, type: .photo(thumbnail))
                 self.mediaAttachments.insert(photoAttachment, at: 0)
             }
         }
@@ -136,6 +137,16 @@ final class ChatRoomViewModel: ObservableObject {
         case .play(let attachment):
             guard let fileURL = attachment.fileURL else { return }
             showMediaPlayer(fileURL)
+        case .remove(let attachment):
+            remove(attachment)
         }
+    }
+    
+    private func remove(_ item: MediaAttachment) {
+        guard let attachmentIndex = mediaAttachments.firstIndex(where: { $0.id == item.id }) else { return }
+        mediaAttachments.remove(at: attachmentIndex)
+        
+        guard let photoIndex = photoPickerItems.firstIndex(where: { $0.itemIdentifier == item.id }) else { return }
+        photoPickerItems.remove(at: photoIndex)
     }
 }
