@@ -11,24 +11,26 @@ struct BubbleImageView: View {
     let item: MessageItem
     
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom, spacing: 5) {
             if item.direction == .sent { Spacer() }
             
-            HStack {
-                if item.direction == .sent { shareButton() }
-                
-                messageTextView()
-                    .shadow(color: Color(.systemGray3).opacity(0.1), radius: 5, x: 0, y: 20)
-                    .overlay {
-                        playButton()
-                            .opacity(item.type == .video ? 1 : 0)
-                    }
-                
-                if item.direction == .received { shareButton() }
+            if item.showGroupParticipantInfo {
+                CircularProfileImageView(item.sender?.profileImageURL, size: .mini)
+                    .offset(y: 5)
             }
+            
+            messageTextView()
+                .shadow(color: Color(.systemGray3).opacity(0.1), radius: 5, x: 0, y: 20)
+                .overlay {
+                    playButton()
+                        .opacity(item.type == .video ? 1 : 0)
+                }
             
             if item.direction == .received { Spacer() }
         }
+        .frame(maxWidth: .infinity, alignment: item.alignment)
+        .padding(.leading, item.leadingPadding)
+        .padding(.trailing, item.trailingPadding)
     }
     
     private func playButton() -> some View {
@@ -62,26 +64,16 @@ struct BubbleImageView: View {
                     timeStampButton()
                 }
             
-            Text(item.text)
-                .padding([.horizontal, .bottom], 8)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(width: 220)
+            if !item.text.isEmptyOrWhiteSpace {
+                Text(item.text)
+                    .padding([.horizontal, .bottom], 8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(width: 220)
+            }
         }
         .background(item.backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .applyTail(item.direction)
-    }
-    
-    private func shareButton() -> some View {
-        Button {
-            
-        } label: {
-            Image(systemName: "arrowshape.turn.up.right.fill")
-                .padding(10)
-                .foregroundStyle(.white)
-                .background(Color.gray)
-                .clipShape(Circle())
-        }
     }
     
     private func timeStampButton() -> some View {
