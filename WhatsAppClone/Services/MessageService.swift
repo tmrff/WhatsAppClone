@@ -50,3 +50,15 @@ struct MessageService {
         }
     }
 }
+
+struct MessageUploadParams {
+    let channel: ChannelItem
+    let text: String
+    let type: MessageType
+    let attachment: MediaAttachment
+    var thumbnail: String?
+    var videoURL: String?
+    var sender: UserItem
+    var audioURL: String?
+    var audioDuration: TimeInterval?
+}
