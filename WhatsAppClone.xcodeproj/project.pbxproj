@@ -93,6 +93,7 @@
 		E952062F2C229525006B4F03 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		E95206312C23D6A9006B4F03 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E95206332C23D892006B4F03 /* UIWindowScene+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindowScene+Extensions.swift"; sourceTree = "<group>"; };
+		E95206352C240754006B4F03 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E9BDE60E2C128CB200B5AC40 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BDE6112C128CB200B5AC40 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
 		E9BDE6152C128CB300B5AC40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		E9BDE6052C128CB200B5AC40 = {
 			isa = PBXGroup;
 			children = (
+				E95206352C240754006B4F03 /* README.md */,
 				E9BDE6102C128CB200B5AC40 /* WhatsAppClone */,
 				E9BDE60F2C128CB200B5AC40 /* Products */,
 			);
