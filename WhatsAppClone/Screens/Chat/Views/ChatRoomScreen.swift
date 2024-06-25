@@ -11,6 +11,7 @@ import PhotosUI
 struct ChatRoomScreen: View {
     let channel: ChannelItem
     @StateObject private var viewModel: ChatRoomViewModel
+    @StateObject private var voiceMessagePlayer = VoiceMessagePlayer()
     
     init(channel: ChannelItem) {
         self.channel = channel
@@ -19,31 +20,32 @@ struct ChatRoomScreen: View {
     
     var body: some View {
         MessageListView(viewModel: viewModel)
-        .toolbar(.hidden, for: .tabBar)
-        .toolbar {
-            leadingNavItem()
-            trailingNavItem()
-        }
-        .photosPicker(
-            isPresented: $viewModel.showPhotoPicker,
-            selection: $viewModel.photoPickerItems,
-            maxSelectionCount: 6,
-            photoLibrary: .shared()
-        )
-        .navigationBarTitleDisplayMode(.inline)
-        .ignoresSafeArea(edges: .bottom)
-        .safeAreaInset(edge: .bottom) {
-            bottomSafeAreaView()
-                .background(Color.whatsAppWhite)
-        }
-        .animation(.easeInOut, value: viewModel.showPhotoPickerPreview)
-        .fullScreenCover(isPresented: $viewModel.videoPlayerState.show) {
-            if let player = viewModel.videoPlayerState.player {
-                MediaPlayerView(player: player) {
-                    viewModel.dismissMediaPlayer()
+            .toolbar(.hidden, for: .tabBar)
+            .toolbar {
+                leadingNavItem()
+                trailingNavItem()
+            }
+            .photosPicker(
+                isPresented: $viewModel.showPhotoPicker,
+                selection: $viewModel.photoPickerItems,
+                maxSelectionCount: 6,
+                photoLibrary: .shared()
+            )
+            .navigationBarTitleDisplayMode(.inline)
+            .ignoresSafeArea(edges: .bottom)
+            .safeAreaInset(edge: .bottom) {
+                bottomSafeAreaView()
+                    .background(Color.whatsAppWhite)
+            }
+            .animation(.easeInOut, value: viewModel.showPhotoPickerPreview)
+            .fullScreenCover(isPresented: $viewModel.videoPlayerState.show) {
+                if let player = viewModel.videoPlayerState.player {
+                    MediaPlayerView(player: player) {
+                        viewModel.dismissMediaPlayer()
+                    }
                 }
             }
-        }
+            .environmentObject(voiceMessagePlayer)
     }
     
     private func bottomSafeAreaView() -> some View {

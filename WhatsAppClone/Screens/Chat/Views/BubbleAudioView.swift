@@ -6,11 +6,27 @@
 //
 
 import SwiftUI
+import CoreMedia
 
 struct BubbleAudioView: View {
-    let item: MessageItem
+    @EnvironmentObject private var voiceMessagePlayer: VoiceMessagePlayer
+    @State private var playbackState: VoiceMessagePlayer.PlaybackState = .stopped
+    
+    private let item: MessageItem
     @State private var sliderValue: Double = 0
-    @State private var sliderRange: ClosedRange<Double> = 0...20
+    @State private var sliderRange: ClosedRange<Double>
+    @State private var playbackTime = "00:00"
+    @State private var isDraggingSlider = false
+    
+    init(item: MessageItem) {
+        self.item = item
+        let audioDuration = item.audioDuration ?? 20
+        self._sliderRange = State(wrappedValue: 0...audioDuration)
+    }
+    
+    private var isCorrectVoiceMessage: Bool {
+        return voiceMessagePlayer.currentURL?.absoluteString == item.audioURL
+    }
     
     var body: some View {
         HStack(alignment: .bottom, spacing: 5) {
@@ -26,11 +42,21 @@ struct BubbleAudioView: View {
             
             HStack {
                 playButton()
-                Slider(value: $sliderValue, in: sliderRange)
-                    .tint(.gray)
+                Slider(value: $sliderValue, in: sliderRange) { editing in
+                    isDraggingSlider = editing
+                    if !editing && isCorrectVoiceMessage {
+                        voiceMessagePlayer.seek(to: sliderValue)
+                    }
+                }
+                .tint(.gray)
                 
-                Text("04:00")
-                    .foregroundStyle(.gray)
+                if playbackState == .stopped {
+                    Text(item.audioDurationAsString)
+                        .foregroundStyle(.gray)
+                } else {
+                    Text(playbackTime)
+                        .foregroundStyle(.gray)
+                }
             }
             .padding(10)
             .background(Color.gray.opacity(0.1))
@@ -48,13 +74,20 @@ struct BubbleAudioView: View {
         .frame(maxWidth: .infinity, alignment: item.alignment)
         .padding(.leading, item.leadingPadding)
         .padding(.trailing, item.trailingPadding)
+        .onReceive(voiceMessagePlayer.$playbackState) { state in
+           observePlayerState(state)
+        }
+        .onReceive(voiceMessagePlayer.$currentTime) { currentTime in
+            guard voiceMessagePlayer.currentURL?.absoluteString == item.audioURL else { return }
+            listen(to: currentTime)
+        }
     }
     
     private func playButton() -> some View {
         Button {
-            
+            handlePlayVoiceMessage()
         } label: {
-            Image(systemName: "play.fill")
+            Image(systemName: playbackState.icon)
                 .padding(10)
                 .background(item.direction == .received ? .green :.white)
                 .clipShape(Circle())
@@ -66,6 +99,36 @@ struct BubbleAudioView: View {
         Text("3:05 PM")
             .font(.footnote)
             .foregroundStyle(.gray)
+    }
+}
+
+// MARK: VoiceMessagePlayer Playback States
+extension BubbleAudioView {
+    private func handlePlayVoiceMessage() {
+        if playbackState == .stopped || playbackState == .paused {
+            guard let audioUrlString = item.audioURL, let voiceMessageUrl = URL(string: audioUrlString) else { return }
+            voiceMessagePlayer.playVoiceMessage(from: voiceMessageUrl)
+        } else {
+            voiceMessagePlayer.pauseVoiceMessage()
+        }
+    }
+    
+    private func observePlayerState(_ state: VoiceMessagePlayer.PlaybackState) {
+        switch state {
+        case .stopped:
+            playbackState = .stopped
+            sliderValue = 0
+        case .playing, .paused:
+            if isCorrectVoiceMessage {
+               playbackState = state
+            }
+        }
+    }
+    
+    private func listen(to currentTime: CMTime) {
+        guard !isDraggingSlider else { return }
+        playbackTime = currentTime.seconds.formatElapsedTime
+        sliderValue = currentTime.seconds
     }
 }
 
