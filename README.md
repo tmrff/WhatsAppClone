@@ -23,7 +23,7 @@ Inside Firebase Console:
 
 <!-- LICENSE -->
 ## License
-Distributed under the MIT License. See <a href="https://github.com/tmrff/WhatsAppClone/blob/main/LICENCE">LICENSE</a> for more information.
+Distributed under the MIT License. See <a href="https://github.com/tmrff/whatsapp-clone-swiftui/blob/main/LICENSE">LICENSE</a> for more information.
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
